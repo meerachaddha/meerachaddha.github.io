@@ -1,0 +1,11 @@
+---
+title: "Welcome to My Website"
+author: Meera Chaddha 
+date: "2026-05-19"
+format:
+  html:
+    theme: journal
+    toc: true
+---
+# Hello, World!  
+Welcome to my Quarto website. 
