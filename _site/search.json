@@ -11,6 +11,6 @@
     "href": "index.html",
     "title": "Welcome to My Website",
     "section": "",
-    "text": "Hello, World!\nWelcome to my Quarto website."
+    "text": "Hello, World!\nWelcome to my Quarto website.\n\nimport platform\nprint(\"Hello from EC2!\")\nprint(\"Python version:\", platform.python_version())\n\nHello from EC2!\nPython version: 3.14.4"
   }
 ]

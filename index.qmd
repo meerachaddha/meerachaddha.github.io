@@ -1,11 +1,18 @@
 ---
 title: "Welcome to My Website"
-author: Meera Chaddha 
+author: Meera Chaddha
 date: "2026-05-19"
 format:
   html:
     theme: journal
     toc: true
 ---
-# Hello, World!  
-Welcome to my Quarto website. 
+
+# Hello, World!
+Welcome to my Quarto website.
+
+```{python}
+import platform
+print("Hello from EC2!")
+print("Python version:", platform.python_version())
+```
