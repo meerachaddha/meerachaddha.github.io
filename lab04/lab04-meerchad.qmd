@@ -1,0 +1,87 @@
+---
+title: "Job Postings Data Analysis"
+author: "Meera Chaddha"
+format: 
+  html: default
+  docx: default
+execute:
+  echo: true
+  eval: true
+  freeze: auto
+---
+
+## Load Libraries
+
+```{python}
+from pyspark.sql import SparkSession
+import pandas as pd
+```
+
+## Step 2: Load and Explore the Dataset
+
+```{python}
+spark = SparkSession.builder.appName("JobPostingsAnalysis").getOrCreate()
+
+df = spark.read.option("header", "true") \
+    .option("inferSchema", "true") \
+    .option("multiLine", "true") \
+    .option("escape", "\"") \
+    .csv("data/lightcast_job_postings.csv")
+
+df.printSchema()
+```
+
+```{python}
+pdf = df.toPandas()
+pdf.info()
+```
+
+```{python}
+pdf.head()
+```
+
+## Step 3: Data Cleaning
+
+```{python}
+pdf = pdf.drop_duplicates()
+
+median_salary_from = pdf['SALARY_FROM'].median()
+median_salary_to = pdf['SALARY_TO'].median()
+pdf['SALARY_FROM'] = pdf['SALARY_FROM'].fillna(median_salary_from)
+pdf['SALARY_TO'] = pdf['SALARY_TO'].fillna(median_salary_to)
+
+pdf['POSTED'] = pd.to_datetime(pdf['POSTED'], errors='coerce')
+pdf['EXPIRED'] = pd.to_datetime(pdf['EXPIRED'], errors='coerce')
+
+print("Cleaning complete.")
+print(pdf.shape)
+```
+
+## Step 4: Exploratory Data Analysis
+
+### Total Job Postings
+
+```{python}
+print(f"Total job postings: {len(pdf)}")
+```
+
+### Top 5 Job Titles
+
+```{python}
+top5 = pdf['TITLE_CLEAN'].value_counts().head(5)
+print(top5)
+```
+
+### Average Salary by Employment Type
+
+```{python}
+avg_salary = pdf.groupby('EMPLOYMENT_TYPE')[['SALARY_FROM','SALARY_TO']].mean().round(2)
+print(avg_salary)
+```
+
+### State with Most Job Postings
+
+```{python}
+top_state = pdf['STATE'].value_counts().head(1)
+print(top_state)
+```
