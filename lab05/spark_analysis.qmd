@@ -1,0 +1,126 @@
+---
+title: "Spark SQL Job Data Analysis"
+author: "Meera Chaddha"
+format:
+  html: default
+  docx: default
+date: "2026-06-02"
+date-format: long
+execute:
+  echo: true
+  eval: true
+  freeze: auto
+---
+
+## Load Libraries
+
+```{python}
+from pyspark.sql import SparkSession
+```
+
+## Step 1: Load and Prepare the Dataset
+
+```{python}
+spark = SparkSession.builder.appName("JobPostingsAnalysis").getOrCreate()
+
+df = spark.read.option("header", "true") \
+    .option("inferSchema", "true") \
+    .option("multiLine", "true") \
+    .option("escape", "\"") \
+    .csv("data/lightcast_job_postings.csv")
+
+df.createOrReplaceTempView("jobs")
+```
+
+## Step 2: Verify the Data
+
+```{python}
+df.show(5)
+df.printSchema()
+```
+
+## Step 3: Spark SQL Queries
+
+### Query 1: How many job postings are in the dataset?
+
+```{python}
+spark.sql("SELECT COUNT(*) AS total_jobs FROM jobs").show()
+```
+
+The dataset contains the total number of job postings listed above.
+
+### Query 2: Top 5 Most Common Job Titles
+
+```{python}
+spark.sql("""
+    SELECT TITLE_CLEAN, COUNT(*) AS job_count
+    FROM jobs
+    GROUP BY TITLE_CLEAN
+    ORDER BY job_count DESC
+    LIMIT 5
+""").show()
+```
+
+These are the most frequently posted job titles in the dataset.
+
+### Query 3: Average Salary by Employment Type
+
+```{python}
+spark.sql("""
+    SELECT EMPLOYMENT_TYPE_NAME,
+           ROUND(AVG(SALARY_FROM), 2) AS avg_salary_from,
+           ROUND(AVG(SALARY_TO), 2) AS avg_salary_to
+    FROM jobs
+    GROUP BY EMPLOYMENT_TYPE_NAME
+    ORDER BY avg_salary_from DESC
+""").show()
+```
+
+Full-time positions tend to have higher average salaries compared to other employment types.
+
+### Query 4: Top 5 States with Most Job Postings
+
+```{python}
+spark.sql("""
+    SELECT STATE_NAME, COUNT(*) AS job_count
+    FROM jobs
+    GROUP BY STATE_NAME
+    ORDER BY job_count DESC
+    LIMIT 5
+""").show()
+```
+
+These states have the highest demand for workers based on job postings.
+
+### Query 5: Salary Range for Each Job Title in California
+
+```{python}
+spark.sql("""
+    SELECT TITLE_CLEAN,
+           MAX(SALARY_TO) - MIN(SALARY_FROM) AS salary_range
+    FROM jobs
+    WHERE STATE_NAME = 'California'
+    GROUP BY TITLE_CLEAN
+    ORDER BY salary_range DESC
+    LIMIT 10
+""").show()
+```
+
+California shows wide salary ranges for certain roles, reflecting high demand and variability in compensation.
+
+### Query 6: Top 5 Industries with Highest Average Salaries and More Than 100 Job Postings
+
+```{python}
+spark.sql("""
+    SELECT NAICS2_NAME,
+           ROUND(AVG(SALARY_FROM), 2) AS avg_salary,
+           COUNT(*) AS job_count
+    FROM jobs
+    GROUP BY NAICS2_NAME
+    HAVING COUNT(*) > 100
+    ORDER BY avg_salary DESC
+    LIMIT 5
+""").show()
+```
+
+These industries offer the highest average salaries while having a significant number of job postings.
