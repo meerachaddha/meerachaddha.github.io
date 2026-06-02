@@ -19,3 +19,9 @@ format:
 
 
 
+
+render:
+  - "*.qmd"
+  - "!lab03/"
+  - "!lab04/"
+  - "!lab05/"
