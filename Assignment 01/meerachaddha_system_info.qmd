@@ -1,0 +1,21 @@
+---
+title: "Assignment 01"
+subtitle: "System Information Proof"
+author: "Meera Chaddha"
+format: 
+  docx: default
+---
+
+```{python}
+import platform
+import psutil
+
+print("Operating System:", platform.system(), platform.release())
+print("Python Version:", platform.python_version())
+print("Machine:", platform.machine())
+print("Processor:", platform.processor())
+
+mem = psutil.virtual_memory()
+print("Total Memory (MB):", round(mem.total / (1024**2), 2))
+print("Available Memory (MB):", round(mem.available / (1024**2), 2))
+```
