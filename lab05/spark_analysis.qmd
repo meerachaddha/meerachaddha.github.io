@@ -9,7 +9,7 @@ date-format: long
 execute:
   echo: true
   eval: true
-  freeze: auto
+  freeze: true
 ---
 
 ## Load Libraries
