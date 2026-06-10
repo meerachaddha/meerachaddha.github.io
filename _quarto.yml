@@ -17,8 +17,8 @@ format:
     css: styles.css
     toc: true
 
-
-
+execute:
+  freeze: auto
 
 render:
   - "*.qmd"
@@ -26,3 +26,4 @@ render:
   - "!lab04/"
   - "!lab05/"
   - "!Assignment 01/"
+  - "!lab07/"
