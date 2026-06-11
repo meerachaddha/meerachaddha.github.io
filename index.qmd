@@ -12,6 +12,9 @@ I am a graduate student at Boston University pursuing a Master's in Applied Busi
 
 | Lab | Topic | Link |
 |-----|-------|------|
+| Lab 03 | Data Restructuring with PySpark | [View](lab03/index.html) |
+| Lab 04 | PySpark Data Analysis | [View](lab04/lab04-meerchad.html) |
 | Lab 05 | PySpark & Lightcast Data | [View](lab05/spark_analysis.html) |
+| Lab 06 | Data Analysis with PySpark | [View](lab06/index.html) |
 | Lab 07 | Plotly Visualizations | [View](lab07/lab07_meerchad.html) |
 | Lab 08 | Salary by Education & Remote Work | [View](lab08/lab08_meerchad.html) |
