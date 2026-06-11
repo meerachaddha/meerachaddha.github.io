@@ -5,3 +5,5 @@ lab04/data/
 lab05/data/
 lab06/lightcast_data.csv
 lab06/_output/lightcast_cleaned.csv
+lightcast_job_postings.csv
+lightcast_cleaned.csv
