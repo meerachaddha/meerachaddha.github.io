@@ -204,13 +204,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="load-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="load-libraries">Load Libraries</h2>
-<div id="ca40a894" class="cell" data-execution_count="1">
+<div id="ee37bd00" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pyspark.sql <span class="im">import</span> SparkSession</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="step-1-load-and-prepare-the-dataset" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-load-and-prepare-the-dataset">Step 1: Load and Prepare the Dataset</h2>
-<div id="331f3fbc" class="cell" data-execution_count="2">
+<div id="33a50006" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>spark <span class="op">=</span> SparkSession.builder.appName(<span class="st">"JobPostingsAnalysis"</span>).getOrCreate()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> spark.read.option(<span class="st">"header"</span>, <span class="st">"true"</span>) <span class="op">\</span></span>
@@ -225,14 +225,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
 Setting default log level to "WARN".
 To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
-26/06/03 16:56:39 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-[Stage 0:&gt;                                                          (0 + 1) / 1]                                                                                [Stage 1:&gt;                                                          (0 + 1) / 1]                                                                                26/06/03 16:57:01 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.</code></pre>
+26/06/11 14:51:07 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:&gt;                                                          (0 + 1) / 1]                                                                                [Stage 1:&gt;                                                          (0 + 1) / 1]                                                                                26/06/11 14:51:38 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.</code></pre>
 </div>
 </div>
 </section>
 <section id="step-2-verify-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-verify-the-data">Step 2: Verify the Data</h2>
-<div id="de6cb29a" class="cell" data-execution_count="3">
+<div id="0f684169" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.show(<span class="dv">5</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df.printSchema()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
@@ -389,7 +389,7 @@ root
 <h2 class="anchored" data-anchor-id="step-3-spark-sql-queries">Step 3: Spark SQL Queries</h2>
 <section id="query-1-how-many-job-postings-are-in-the-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="query-1-how-many-job-postings-are-in-the-dataset">Query 1: How many job postings are in the dataset?</h3>
-<div id="8bb3b19a" class="cell" data-execution_count="4">
+<div id="19e531a9" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"SELECT COUNT(*) AS total_jobs FROM jobs"</span>).show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>[Stage 3:&gt;                                                          (0 + 1) / 1]</code></pre>
@@ -410,7 +410,7 @@ root
 </section>
 <section id="query-2-top-5-most-common-job-titles" class="level3">
 <h3 class="anchored" data-anchor-id="query-2-top-5-most-common-job-titles">Query 2: Top 5 Most Common Job Titles</h3>
-<div id="12091c16" class="cell" data-execution_count="5">
+<div id="ec9b05bb" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"""</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT TITLE_CLEAN, COUNT(*) AS job_count</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM jobs</span></span>
@@ -441,7 +441,7 @@ root
 </section>
 <section id="query-3-average-salary-by-employment-type" class="level3">
 <h3 class="anchored" data-anchor-id="query-3-average-salary-by-employment-type">Query 3: Average Salary by Employment Type</h3>
-<div id="d987bb11" class="cell" data-execution_count="6">
+<div id="309e239c" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"""</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT EMPLOYMENT_TYPE_NAME,</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="st">           ROUND(AVG(SALARY_FROM), 2) AS avg_salary_from,</span></span>
@@ -472,7 +472,7 @@ root
 </section>
 <section id="query-4-top-5-states-with-most-job-postings" class="level3">
 <h3 class="anchored" data-anchor-id="query-4-top-5-states-with-most-job-postings">Query 4: Top 5 States with Most Job Postings</h3>
-<div id="802afa75" class="cell" data-execution_count="7">
+<div id="1cbe315a" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"""</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT STATE_NAME, COUNT(*) AS job_count</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM jobs</span></span>
@@ -503,7 +503,7 @@ root
 </section>
 <section id="query-5-salary-range-for-each-job-title-in-california" class="level3">
 <h3 class="anchored" data-anchor-id="query-5-salary-range-for-each-job-title-in-california">Query 5: Salary Range for Each Job Title in California</h3>
-<div id="23ecd912" class="cell" data-execution_count="8">
+<div id="b211b979" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"""</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT TITLE_CLEAN,</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="st">           MAX(SALARY_TO) - MIN(SALARY_FROM) AS salary_range</span></span>
@@ -541,7 +541,7 @@ root
 </section>
 <section id="query-6-top-5-industries-with-highest-average-salaries-and-more-than-100-job-postings" class="level3">
 <h3 class="anchored" data-anchor-id="query-6-top-5-industries-with-highest-average-salaries-and-more-than-100-job-postings">Query 6: Top 5 Industries with Highest Average Salaries and More Than 100 Job Postings</h3>
-<div id="de929581" class="cell" data-execution_count="9">
+<div id="5a97eeec" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>spark.sql(<span class="st">"""</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT NAICS2_NAME,</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="st">           ROUND(AVG(SALARY_FROM), 2) AS avg_salary,</span></span>
