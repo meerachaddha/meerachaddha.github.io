@@ -1,13 +1,17 @@
 project:
   type: website
+  output-dir: _site
 
 website:
-  title: "meerachaddha.github.io"
+  title: "Meera Chaddha"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "Home"
+        file: index.qmd
+      - text: "Labs"
+        file: labs.qmd
+      - text: "About"
+        file: about.qmd
 
 format:
   html:
@@ -19,12 +23,3 @@ format:
 
 execute:
   freeze: auto
-
-render:
-  - "*.qmd"
-  - "!lab03/"
-  - "!lab04/"
-  - "!lab05/"
-  - "!lab06/"
-  - "!lab07/"
-  - "!Assignment 01/"

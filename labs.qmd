@@ -1,12 +1,6 @@
 ---
-title: "Welcome to My Portfolio"
-author: Meera Chaddha
-date: "2026-06-11"
+title: "Labs"
 ---
-
-# Hi, I am Meera
-
-I am a graduate student at Boston University pursuing a Master's in Applied Business Analytics. This site showcases my work in Big Data and Cloud Analytics.
 
 ## AD688: Big Data and Cloud Analytics
 
