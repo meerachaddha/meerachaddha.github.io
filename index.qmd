@@ -18,3 +18,4 @@ I am a graduate student at Boston University pursuing a Master's in Applied Busi
 | Lab 06 | Data Analysis with PySpark | [View](lab06/index.html) |
 | Lab 07 | Plotly Visualizations | [View](lab07/lab07_meerchad.html) |
 | Lab 08 | Salary by Education & Remote Work | [View](lab08/lab08_meerchad.html) |
+| Lab 09 | Regression Modeling on Employment Data | [View](lab09/lab09_meerachaddha.html) |
