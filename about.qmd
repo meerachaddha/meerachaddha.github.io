@@ -2,4 +2,41 @@
 title: "About"
 ---
 
-About this site
+## About Me
+
+Meera is currently pursuing a Master of Science degree at Boston University in Applied Business Analytics. Developing skills in data analytics, visualization, and predictive modeling to drive informed business decisions. 
+
+## Education
+
+**Master of Science in Applied Business Analytics**
+Boston University, Metropolitan College | August 2026
+
+**Bachelor of Science in Business Adminstration & Communication Studies**
+**Concentrating in Accounting & Advisory Services**
+Northeastern University | December 2025
+
+## Skills
+
+**Programming & Tools:** Python, PySpark, SQL, AWS EC2
+
+**Libraries & Frameworks:** Pandas, Scikit-learn, PySpark MLlib, Plotly, Seaborn
+
+**Cloud & DevOps:** AWS Cloud Practitioner, GitHub, Quarto
+
+**Other:** Microsoft Office, SPSS, Tableau, Adobe Spark 
+
+## Experience
+
+**Audit & Assurance Co-op**
+Deloitte | Jan 2025 - May 2025
+
+**Undergraduate Accounting Teaching Assistant** 
+Northeastern University | Sep 2025 - Dec 2025
+
+**Marketing Intern** 
+Grey Group Singapore | May 2023 - Jul 2023
+
+## Connect
+
+- [LinkedIn](www.linkedin.com/in/meera-chaddha)
+- [GitHub](https://github.com/meerachaddha)
