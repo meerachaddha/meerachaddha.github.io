@@ -6,16 +6,41 @@ date: "2026-06-11"
 
 # Hi, I am Meera
 
-I am a graduate student at Boston University pursuing a Master's in Applied Business Analytics. This site showcases my work in Big Data and Cloud Analytics.
+## About Me
 
-## AD688: Big Data and Cloud Analytics
+Meera is currently pursuing a Master of Science degree at Boston University in Applied Business Analytics. Developing skills in data analytics, visualization, and predictive modeling to drive informed business decisions. 
 
-| Lab | Topic | Link |
-|-----|-------|------|
-| Lab 03 | Data Restructuring with PySpark | [View](lab03/index.html) |
-| Lab 04 | PySpark Data Analysis | [View](lab04/lab04-meerchad.html) |
-| Lab 05 | PySpark & Lightcast Data | [View](lab05/spark_analysis.html) |
-| Lab 06 | Data Analysis with PySpark | [View](lab06/index.html) |
-| Lab 07 | Plotly Visualizations | [View](lab07/lab07_meerchad.html) |
-| Lab 08 | Salary by Education & Remote Work | [View](lab08/lab08_meerchad.html) |
-| Lab 09 | Regression Modeling on Employment Data | [View](lab09/lab09_meerachaddha.html) |
+## Education
+
+**Master of Science in Applied Business Analytics**
+Boston University, Metropolitan College | August 2026
+
+**Bachelor of Science in Business Adminstration & Communication Studies**
+**Concentrating in Accounting & Advisory Services**
+Northeastern University | December 2025
+
+## Skills
+
+**Programming & Tools:** Python, PySpark, SQL, AWS EC2
+
+**Libraries & Frameworks:** Pandas, Scikit-learn, PySpark MLlib, Plotly, Seaborn
+
+**Cloud & DevOps:** AWS Cloud Practitioner, GitHub, Quarto
+
+**Other:** Microsoft Office, SPSS, Tableau, Adobe Spark 
+
+## Experience
+
+**Audit & Assurance Co-op**
+Deloitte | Jan 2025 - May 2025
+
+**Undergraduate Accounting Teaching Assistant** 
+Northeastern University | Sep 2025 - Dec 2025
+
+**Marketing Intern** 
+Grey Group Singapore | May 2023 - Jul 2023
+
+## Connect
+
+- [LinkedIn](www.linkedin.com/in/meera-chaddha)
+- [GitHub](https://github.com/meerachaddha)
