@@ -1,13 +1,14 @@
 ---
-title: "Job Postings Data Analysis"
-author: "Meera Chaddha"
-format: 
+title: Job Postings Data Analysis
+author: Meera Chaddha
+format:
   html: default
   docx: default
 execute:
   echo: true
   eval: true
   freeze: auto
+jupyter: python3
 ---
 
 ## Load Libraries
@@ -15,6 +16,11 @@ execute:
 ```{python}
 from pyspark.sql import SparkSession
 import pandas as pd
+```
+
+```{python}
+import os
+os.environ['JAVA_HOME'] = '/usr/lib/jvm/java-17-openjdk-amd64'
 ```
 
 ## Step 2: Load and Explore the Dataset
@@ -32,7 +38,7 @@ df.printSchema()
 ```
 
 ```{python}
-pdf = df.toPandas()
+pdf = pd.read_csv("data/lightcast_job_postings.csv", nrows=10000)
 pdf.info()
 ```
 
@@ -68,20 +74,43 @@ print(f"Total job postings: {len(pdf)}")
 ### Top 5 Job Titles
 
 ```{python}
-top5 = pdf['TITLE_CLEAN'].value_counts().head(5)
-print(top5)
+import plotly.express as px
+
+top5 = pdf['TITLE_CLEAN'].value_counts().head(5).reset_index()
+top5.columns = ['Job Title', 'Count']
+
+fig = px.bar(top5.sort_values('Count'), x='Count', y='Job Title',
+             orientation='h', title='Top 5 Most Common Job Titles',
+             labels={'Count': 'Number of Postings', 'Job Title': 'Job Title'})
+fig.update_traces(marker_color='steelblue')
+fig.show()
 ```
 
 ### Average Salary by Employment Type
 
 ```{python}
-avg_salary = pdf.groupby('EMPLOYMENT_TYPE')[['SALARY_FROM','SALARY_TO']].mean().round(2)
-print(avg_salary)
+avg_salary = pdf.groupby('EMPLOYMENT_TYPE_NAME')[['SALARY_FROM','SALARY_TO']].mean().round(2).reset_index()
+
+fig2 = px.bar(avg_salary, x='EMPLOYMENT_TYPE_NAME', y='SALARY_FROM',
+              title='Average Salary by Employment Type',
+              labels={'EMPLOYMENT_TYPE_NAME': 'Employment Type', 'SALARY_FROM': 'Avg Salary ($)'})
+fig2.update_traces(marker_color='steelblue')
+fig2.show()
 ```
 
 ### State with Most Job Postings
 
 ```{python}
-top_state = pdf['STATE'].value_counts().head(1)
-print(top_state)
+state_counts = pdf['STATE_NAME'].value_counts().reset_index()
+state_counts.columns = ['State', 'Count']
+
+top_state = state_counts.iloc[0]
+print(f"State with most job postings: {top_state['State']} ({top_state['Count']:,} postings)")
+
+fig3 = px.bar(state_counts.head(10), x='State', y='Count',
+              title='Top 10 States by Job Postings',
+              labels={'State': 'State', 'Count': 'Number of Postings'})
+fig3.update_traces(marker_color='steelblue')
+fig3.show()
 ```
+

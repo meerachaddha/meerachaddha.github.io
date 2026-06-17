@@ -1,0 +1,11 @@
+{
+  "hash": "36f05efda372091fe65d5a8dd2b003d7",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Assignment 01\"\nsubtitle: \"System Information Proof\"\nauthor: \"Meera Chaddha\"\nformat: \n  docx: default\n---\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nimport platform\nimport psutil\n\nprint(\"Operating System:\", platform.system(), platform.release())\nprint(\"Python Version:\", platform.python_version())\nprint(\"Machine:\", platform.machine())\nprint(\"Processor:\", platform.processor())\n\nmem = psutil.virtual_memory()\nprint(\"Total Memory (MB):\", round(mem.total / (1024**2), 2))\nprint(\"Available Memory (MB):\", round(mem.available / (1024**2), 2))\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nOperating System: Linux 7.0.0-1006-aws\nPython Version: 3.14.4\nMachine: x86_64\nProcessor: \nTotal Memory (MB): 7815.46\nAvailable Memory (MB): 5588.0\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "meerachaddha_system_info_files"
+    ],
+    "filters": []
+  }
+}
