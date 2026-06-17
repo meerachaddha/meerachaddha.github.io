@@ -179,14 +179,42 @@
     "href": "index.html",
     "title": "Welcome to My Portfolio",
     "section": "",
-    "text": "I am a graduate student at Boston University pursuing a Master’s in Applied Business Analytics. This site showcases my work in Big Data and Cloud Analytics.\n\n\n\n\n\nLab\nTopic\nLink\n\n\n\n\nLab 03\nData Restructuring with PySpark\nView\n\n\nLab 04\nPySpark Data Analysis\nView\n\n\nLab 05\nPySpark & Lightcast Data\nView\n\n\nLab 06\nData Analysis with PySpark\nView\n\n\nLab 07\nPlotly Visualizations\nView\n\n\nLab 08\nSalary by Education & Remote Work\nView\n\n\nLab 09\nRegression Modeling on Employment Data\nView"
+    "text": "Meera is currently pursuing a Master of Science degree at Boston University in Applied Business Analytics. Developing skills in data analytics, visualization, and predictive modeling to drive informed business decisions.\n\n\n\nMaster of Science in Applied Business Analytics Boston University, Metropolitan College | August 2026\nBachelor of Science in Business Adminstration & Communication Studies Concentrating in Accounting & Advisory Services Northeastern University | December 2025\n\n\n\nProgramming & Tools: Python, PySpark, SQL, AWS EC2\nLibraries & Frameworks: Pandas, Scikit-learn, PySpark MLlib, Plotly, Seaborn\nCloud & DevOps: AWS Cloud Practitioner, GitHub, Quarto\nOther: Microsoft Office, SPSS, Tableau, Adobe Spark\n\n\n\nAudit & Assurance Co-op Deloitte | Jan 2025 - May 2025\nUndergraduate Accounting Teaching Assistant Northeastern University | Sep 2025 - Dec 2025\nMarketing Intern Grey Group Singapore | May 2023 - Jul 2023\n\n\n\n\nLinkedIn\nGitHub"
   },
   {
-    "objectID": "index.html#ad688-big-data-and-cloud-analytics",
-    "href": "index.html#ad688-big-data-and-cloud-analytics",
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
     "title": "Welcome to My Portfolio",
     "section": "",
-    "text": "Lab\nTopic\nLink\n\n\n\n\nLab 03\nData Restructuring with PySpark\nView\n\n\nLab 04\nPySpark Data Analysis\nView\n\n\nLab 05\nPySpark & Lightcast Data\nView\n\n\nLab 06\nData Analysis with PySpark\nView\n\n\nLab 07\nPlotly Visualizations\nView\n\n\nLab 08\nSalary by Education & Remote Work\nView\n\n\nLab 09\nRegression Modeling on Employment Data\nView"
+    "text": "Meera is currently pursuing a Master of Science degree at Boston University in Applied Business Analytics. Developing skills in data analytics, visualization, and predictive modeling to drive informed business decisions."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Welcome to My Portfolio",
+    "section": "",
+    "text": "Master of Science in Applied Business Analytics Boston University, Metropolitan College | August 2026\nBachelor of Science in Business Adminstration & Communication Studies Concentrating in Accounting & Advisory Services Northeastern University | December 2025"
+  },
+  {
+    "objectID": "index.html#skills",
+    "href": "index.html#skills",
+    "title": "Welcome to My Portfolio",
+    "section": "",
+    "text": "Programming & Tools: Python, PySpark, SQL, AWS EC2\nLibraries & Frameworks: Pandas, Scikit-learn, PySpark MLlib, Plotly, Seaborn\nCloud & DevOps: AWS Cloud Practitioner, GitHub, Quarto\nOther: Microsoft Office, SPSS, Tableau, Adobe Spark"
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Welcome to My Portfolio",
+    "section": "",
+    "text": "Audit & Assurance Co-op Deloitte | Jan 2025 - May 2025\nUndergraduate Accounting Teaching Assistant Northeastern University | Sep 2025 - Dec 2025\nMarketing Intern Grey Group Singapore | May 2023 - Jul 2023"
+  },
+  {
+    "objectID": "index.html#connect",
+    "href": "index.html#connect",
+    "title": "Welcome to My Portfolio",
+    "section": "",
+    "text": "LinkedIn\nGitHub"
   },
   {
     "objectID": "lab07/lab07_meerchad.html",
