@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Meera Chaddha">
-<meta name="dcterms.date" content="2026-06-11">
 
-<title>Welcome to My Portfolio – Meera Chaddha</title>
+<title>Lab 06: Data Analysis with PySpark – Meera Chaddha</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,24 +24,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6fc9d6c17617e0ae5a0d73c1e12b0c38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6fc9d6c17617e0ae5a0d73c1e12b0c38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -82,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Meera Chaddha</span>
     </a>
   </div>
@@ -95,11 +94,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./labs.html"> 
+    <a class="nav-link" href="../labs.html"> 
 <span class="menu-text">Labs</span></a>
   </li>  
 </ul>
@@ -118,14 +117,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#hi-i-am-meera" id="toc-hi-i-am-meera" class="nav-link active" data-scroll-target="#hi-i-am-meera">Hi, I am Meera</a>
-  <ul class="collapse">
-  <li><a href="#about-me" id="toc-about-me" class="nav-link" data-scroll-target="#about-me">About Me</a></li>
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
-  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">Skills</a></li>
-  <li><a href="#experience" id="toc-experience" class="nav-link" data-scroll-target="#experience">Experience</a></li>
-  <li><a href="#connect" id="toc-connect" class="nav-link" data-scroll-target="#connect">Connect</a></li>
-  </ul></li>
+  <li><a href="#q1-job-count-by-state" id="toc-q1-job-count-by-state" class="nav-link active" data-scroll-target="#q1-job-count-by-state">Q1: Job Count by State</a></li>
+  <li><a href="#q2-jobs-by-industry" id="toc-q2-jobs-by-industry" class="nav-link" data-scroll-target="#q2-jobs-by-industry">Q2: Jobs by Industry</a></li>
+  <li><a href="#q3-percent-change-in-companies" id="toc-q3-percent-change-in-companies" class="nav-link" data-scroll-target="#q3-percent-change-in-companies">Q3: Percent Change in Companies</a></li>
+  <li><a href="#q4-average-salary-by-industry" id="toc-q4-average-salary-by-industry" class="nav-link" data-scroll-target="#q4-average-salary-by-industry">Q4: Average Salary by Industry</a></li>
+  <li><a href="#q5-skills-distribution" id="toc-q5-skills-distribution" class="nav-link" data-scroll-target="#q5-skills-distribution">Q5: Skills Distribution</a></li>
   </ul>
 </nav>
     </div>
@@ -134,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Welcome to My Portfolio</h1>
+<h1 class="title">Lab 06: Data Analysis with PySpark</h1>
 </div>
 
 
@@ -148,12 +144,6 @@ ul.task-list li input[type="checkbox"] {
           </div>
   </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 11, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -163,39 +153,53 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="hi-i-am-meera" class="level1">
-<h1>Hi, I am Meera</h1>
-<section id="about-me" class="level2">
-<h2 class="anchored" data-anchor-id="about-me">About Me</h2>
-<p>Meera is currently pursuing a Master of Science degree at Boston University in Applied Business Analytics. Developing skills in data analytics, visualization, and predictive modeling to drive informed business decisions.</p>
+<p>Analysis of the Lightcast job postings dataset using PySpark and Matplotlib.</p>
+<section id="q1-job-count-by-state" class="level2">
+<h2 class="anchored" data-anchor-id="q1-job-count-by-state">Q1: Job Count by State</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="_output/q1_job_count_by_state.png" class="img-fluid figure-img"></p>
+<figcaption>Job Count by State</figcaption>
+</figure>
+</div>
 </section>
-<section id="education" class="level2">
-<h2 class="anchored" data-anchor-id="education">Education</h2>
-<p><strong>Master of Science in Applied Business Analytics</strong> Boston University, Metropolitan College | August 2026</p>
-<p><strong>Bachelor of Science in Business Adminstration &amp; Communication Studies</strong> <strong>Concentrating in Accounting &amp; Advisory Services</strong> Northeastern University | December 2025</p>
+<section id="q2-jobs-by-industry" class="level2">
+<h2 class="anchored" data-anchor-id="q2-jobs-by-industry">Q2: Jobs by Industry</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="_output/q2_jobs_by_industry.png" class="img-fluid figure-img"></p>
+<figcaption>Jobs by Industry</figcaption>
+</figure>
+</div>
 </section>
-<section id="skills" class="level2">
-<h2 class="anchored" data-anchor-id="skills">Skills</h2>
-<p><strong>Programming &amp; Tools:</strong> Python, PySpark, SQL, AWS EC2</p>
-<p><strong>Libraries &amp; Frameworks:</strong> Pandas, Scikit-learn, PySpark MLlib, Plotly, Seaborn</p>
-<p><strong>Cloud &amp; DevOps:</strong> AWS Cloud Practitioner, GitHub, Quarto</p>
-<p><strong>Other:</strong> Microsoft Office, SPSS, Tableau, Adobe Spark</p>
+<section id="q3-percent-change-in-companies" class="level2">
+<h2 class="anchored" data-anchor-id="q3-percent-change-in-companies">Q3: Percent Change in Companies</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="_output/q3_pct_change_companies.png" class="img-fluid figure-img"></p>
+<figcaption>Percent Change in Companies</figcaption>
+</figure>
+</div>
 </section>
-<section id="experience" class="level2">
-<h2 class="anchored" data-anchor-id="experience">Experience</h2>
-<p><strong>Audit &amp; Assurance Co-op</strong> Deloitte | Jan 2025 - May 2025</p>
-<p><strong>Undergraduate Accounting Teaching Assistant</strong> Northeastern University | Sep 2025 - Dec 2025</p>
-<p><strong>Marketing Intern</strong> Grey Group Singapore | May 2023 - Jul 2023</p>
+<section id="q4-average-salary-by-industry" class="level2">
+<h2 class="anchored" data-anchor-id="q4-average-salary-by-industry">Q4: Average Salary by Industry</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="_output/q4_avg_salary_by_industry.png" class="img-fluid figure-img"></p>
+<figcaption>Average Salary by Industry</figcaption>
+</figure>
+</div>
 </section>
-<section id="connect" class="level2">
-<h2 class="anchored" data-anchor-id="connect">Connect</h2>
-<ul>
-<li><a href="https://www.linkedin.com/in/meera-chaddha">LinkedIn</a></li>
-<li><a href="https://github.com/meerachaddha">GitHub</a></li>
-</ul>
+<section id="q5-skills-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="q5-skills-distribution">Q5: Skills Distribution</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="_output/q5_skills_distribution.png" class="img-fluid figure-img"></p>
+<figcaption>Skills Distribution</figcaption>
+</figure>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

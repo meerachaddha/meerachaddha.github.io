@@ -1,0 +1,30 @@
+---
+title: "Lab 06: Data Analysis with PySpark"
+author: "Meera Chaddha"
+format: html
+execute:
+  echo: false
+  eval: false
+---
+
+Analysis of the Lightcast job postings dataset using PySpark and Matplotlib.
+
+## Q1: Job Count by State
+
+![Job Count by State](_output/q1_job_count_by_state.png)
+
+## Q2: Jobs by Industry
+
+![Jobs by Industry](_output/q2_jobs_by_industry.png)
+
+## Q3: Percent Change in Companies
+
+![Percent Change in Companies](_output/q3_pct_change_companies.png)
+
+## Q4: Average Salary by Industry
+
+![Average Salary by Industry](_output/q4_avg_salary_by_industry.png)
+
+## Q5: Skills Distribution
+
+![Skills Distribution](_output/q5_skills_distribution.png)
